@@ -1,0 +1,41 @@
+.item{
+  padding:20rpx;
+  display: flex;
+  position: relative;
+}
+.item image{
+  width:180rpx;
+  height:180rpx;
+  margin-right:20rpx;
+}
+.right{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  font-size:28rpx;
+  color:rgb(124, 124, 124);
+}
+.shopname{
+  font-size:36rpx;
+  color:#000;
+}
+.score{
+  position: absolute;
+  top:20rpx;
+  right:20rpx;
+  background-color: #EE523D;
+  padding:0 16rpx;
+  height:36rpx;
+  color:#fff;
+  border-radius: 30rpx;
+}
+
+.wrap{
+  padding:20rpx;
+}
+.loading{
+  background-color: #ddd;
+  text-align: center;
+   padding:20rpx 0;
+   border-radius:10rpx;
+}

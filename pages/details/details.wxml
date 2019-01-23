@@ -1,0 +1,52 @@
+<!-- 轮播图 -->
+<swiper indicator-dots autoplay interval='{{3000}}' circular>
+  <swiper-item wx:for="{{m.slice(details.images)}}" wx:key="item">
+    <image src="{{item}}"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 详情 -->
+<view class="details">
+  <text class="title">{{details.name}}</text>
+  <text>电话：{{details.phone}}</text>
+  <text>地址：{{details.address}}</text>
+  <text>营业时间：{{details.businessHours}}</text>
+  <text class="score">{{details.score}}</text>
+</view>
+
+
+<!-- 评论 -->
+<view class="comments" wx:for="{{details.comments}}" wx:key="*this">
+<text class="username">{{item.name}}</text>
+<text class="date">{{item.date}}</text>
+<text class="rating">{{item.rating}}</text>
+<text class="content">{{item.content}}</text>
+<view class="image">
+<block wx:for="{{item.images}}" wx:for-item="img" wx:key="*this">
+<image src="{{m.replace(img)}}"
+ class="i"
+ bindtap="preview" 
+ data-current="{{img}}"
+ data-urls="{{item.images}}"
+ ></image>
+</block>
+</view>
+</view> 
+
+<wxs module="m">
+  function replace(str) {
+    return str.replace('w.h', '110.110')
+  }
+
+  function slice(arr) {
+    if (arr.length > 6) {
+      return arr.slice(0, 6)
+    }
+    return false
+  }
+
+  module.exports = {
+    replace: replace,
+    slice: slice
+  }
+</wxs>
